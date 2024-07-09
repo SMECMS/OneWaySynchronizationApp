@@ -16,7 +16,8 @@ on the Command Prompt execute the OneWaySynchronizationConsoleApp.exe passing 4 
 + **Sync Cycle Interval**<sub> _In Seconds_</sub> **e.g.** (5)
 + **Log File Path e.g.** (C:\Users\Foobar\Pictures\Log\)
 
-**_Very Important:_** all paths must end with ' \ ' and all paths that have spaces need to be inside double quotes ' " ' and end with double ' \ '.
+**_Very Important:_** all paths must end with ' \ ', And all paths that have spaces need to be inside double quotes ' " ' and end with double ' \ '.
+Also the Log File Path must be outside the Source or Destination folders otherwise the Log Files will be copied to destination or deleted.
 
 ### Examples:
 ```
