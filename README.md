@@ -6,7 +6,7 @@ A One-way Synchronization console App that fully syncs the contents of a folder 
 The Console App will first create all folders from source not yet present in destination,
 then check all files in source to see if they are present in destination, if they are then a MD5 checksum decides if the destination file will be overwritten,
 otherwise the file is copied from source to destination. Lastly it cleans the destination from all files and folders not present in source.
-All this actions are logged onto a log file in path especified and onto the console and this cycle repeats every **X** seconds especified.
+All these actions are logged onto a log file in path especified and onto the console and this cycle repeats every **X** seconds especified.
 
 ## How to use
 on the Command Prompt execute the OneWaySynchronizationConsoleApp.exe passing 4 arguments:
