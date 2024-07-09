@@ -70,6 +70,15 @@ namespace OneWaySynchronizationConsoleApp
                         _logger.NewFolderCreatedMessage(destinationPath + filePath);
                     }
                 }
+                //Parallel.For(0, sourceFolders.Count, i => {
+                //    cancellationToken.ThrowIfCancellationRequested();
+                //    string filePath = sourceFolders[i].Substring(sourcePath.Length);
+                //    if (!Directory.Exists(destinationPath + filePath))
+                //    {
+                //        Directory.CreateDirectory(destinationPath + filePath);
+                //        _logger.NewFolderCreatedMessage(destinationPath + filePath);
+                //    }
+                //});
                 cancellationToken.ThrowIfCancellationRequested();
 
                 _logger.CreateFoldersEndDebug();
