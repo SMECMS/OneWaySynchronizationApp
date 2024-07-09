@@ -59,7 +59,7 @@ namespace OneWaySynchronizationConsoleApp
                 //get all source folders
                 List<string> sourceFolders = Directory.GetDirectories(sourcePath, "*", SearchOption.AllDirectories).OrderBy(x => x).ToList();
 
-                //if !exist in destination CreateFolder (multithreaded)
+                //if !exist in destination CreateFolder 
                 for (int i = 0; i < sourceFolders.Count; i++)
                 {
                     cancellationToken.ThrowIfCancellationRequested();
@@ -70,15 +70,6 @@ namespace OneWaySynchronizationConsoleApp
                         _logger.NewFolderCreatedMessage(destinationPath + filePath);
                     }
                 }
-                //Parallel.For(0, sourceFolders.Count, i => {
-                //    cancellationToken.ThrowIfCancellationRequested();
-                //    string filePath = sourceFolders[i].Substring(sourcePath.Length);
-                //    if (!Directory.Exists(destinationPath + filePath))
-                //    {
-                //        Directory.CreateDirectory(destinationPath + filePath);
-                //        _logger.NewFolderCreatedMessage(destinationPath + filePath);
-                //    }
-                //});
                 cancellationToken.ThrowIfCancellationRequested();
 
                 _logger.CreateFoldersEndDebug();
@@ -99,7 +90,7 @@ namespace OneWaySynchronizationConsoleApp
                 List<string> sourceFiles = Directory.GetFiles(sourcePath, "*", SearchOption.AllDirectories).OrderBy(x => x).ToList();
 
 
-                //if !exist in destination CreateFile / else checksumMD5 Update if different (multithread)
+                //if !exist in destination CreateFile / else checksumMD5 Update if different
                 for (int i = 0; i < sourceFiles.Count; i++)
                 {
                     cancellationToken.ThrowIfCancellationRequested();
@@ -235,7 +226,7 @@ namespace OneWaySynchronizationConsoleApp
                 //Get all destination files
                 List<string> destinationFiles = Directory.GetFiles(destinationPath, "*", SearchOption.AllDirectories).OrderBy(x => x).ToList();
 
-                //if !exists in source then Delete (multithread)
+                //if !exists in source then Delete
                 for (int i = 0; i < destinationFiles.Count; i++)
                 {
                     cancellationToken.ThrowIfCancellationRequested();
@@ -255,7 +246,7 @@ namespace OneWaySynchronizationConsoleApp
                 //Get all destination folders
                 List<string> destinationFolders = Directory.GetDirectories(destinationPath, "*", SearchOption.AllDirectories).OrderByDescending(o => o).ToList();
 
-                //if !exists in source then Delete (multithread)
+                //if !exists in source then Delete
                 for (int i = 0; i < destinationFolders.Count; i++)
                 {
                     cancellationToken.ThrowIfCancellationRequested();
